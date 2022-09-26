@@ -16,7 +16,7 @@ public class PlayerMovement : Subject
         foreach (var controller in FindObjectsOfType(typeof(ConffetiController)) as Observer[])
         {
             Attach(controller);
-            Debug.Log("Attached");
+            //Debug.Log("Attached");
         }
     }
 
@@ -53,7 +53,7 @@ public class PlayerMovement : Subject
     // Update is called once per frame
     void FixedUpdate()
     {
-        //rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
         if (rb.position.y < -1f)
         {
@@ -65,7 +65,6 @@ public class PlayerMovement : Subject
 
     void Update()
     {
-        if (Input.GetKeyDown("down"))
-            NotifyObservers();
+         NotifyObservers();
     }
 }
