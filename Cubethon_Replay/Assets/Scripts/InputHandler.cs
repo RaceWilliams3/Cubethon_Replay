@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
     private bool _isReplaying;
     private bool _isRecording;
     private PlayerMovement _playerController;
-    private Command _buttonA, _ButtonD, _buttonW;
+    private Command _buttonA, _ButtonD;
 
     void Start()
     {
