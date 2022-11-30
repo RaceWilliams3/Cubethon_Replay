@@ -20,9 +20,6 @@ class Invoker : MonoBehaviour
         if (_isRecording)
         {
             _recordedCommands.Add(_recordingTime, command);
-
-            //Debug.Log("Recorded Time: " + _recordingTime);
-            //Debug.Log("Recorded Command: " + command);
         }
     }
 
@@ -60,9 +57,6 @@ class Invoker : MonoBehaviour
             {
                 if (Mathf.Approximately(_replayTime, _recordedCommands.Keys[0]))
                 {
-                    //Debug.Log("Replay Time: " + _replayTime);
-                    //Debug.Log("Replay Command: " + _recordedCommands.Values[0]);
-
                     _recordedCommands.Values[0].Execute();
                     _recordedCommands.RemoveAt(0);
                 }

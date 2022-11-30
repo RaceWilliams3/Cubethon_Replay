@@ -1,36 +1,12 @@
 using UnityEngine;
 
-public class PlayerMovement : Subject
+public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody rb;
 
     public float forwardForce = 500f;
     public float sidewaysForce = 100f;
-
-    private ConffetiController _conControl;
-
-    void Awake()
-    {
-
-        foreach (var controller in FindObjectsOfType(typeof(ConffetiController)) as Observer[])
-        {
-            Attach(controller);
-            //Debug.Log("Attached");
-        }
-    }
-
-    void OnEnable()
-    {
-        if (_conControl)
-            Attach(_conControl);
-    }
-
-    void OnDisable()
-    {
-        if (_conControl)
-            Detach(_conControl);
-    }
 
     public void MoveLeft()
     {
@@ -61,10 +37,5 @@ public class PlayerMovement : Subject
         }
 
         
-    }
-
-    void Update()
-    {
-         NotifyObservers();
     }
 }
